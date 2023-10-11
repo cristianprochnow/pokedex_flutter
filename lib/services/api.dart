@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class Api {
   static Future<Map<String, dynamic>> getData(String url) async {
-    final uri = Uri.parse(url);
+    final Uri uri = Uri.parse(url);
     final response = await http.get(uri);
 
     final int status = response.statusCode;

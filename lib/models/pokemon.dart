@@ -1,3 +1,5 @@
+import 'package:pokedex_flutter/utils/constants.dart';
+
 class Pokemon {
   String url;
   String name;
@@ -15,8 +17,7 @@ class Pokemon {
       .first
   );
 
-  String get image => "https://raw.githubusercontent.com/PokeAPI"
-    "/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
+  String get image => "$pokemonImageUrl/$id.png";
 
   factory Pokemon.fromJson(Map<String, dynamic> jsonData) {
     return Pokemon(url: jsonData['url'], name: jsonData['name']);
