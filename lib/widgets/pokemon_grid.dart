@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:pokedex_flutter/models/pokemon.dart';
 import 'package:pokedex_flutter/models/screen_size_scale.dart';
+import 'package:pokedex_flutter/widgets/pokemon_card.dart';
 
 class PokemonGrid extends StatefulWidget {
   const PokemonGrid({super.key, required this.pokemonList});
@@ -26,25 +27,18 @@ class _PokemonGridState extends State<PokemonGrid> {
       ScreenSizeScale(
         screenWidth: 450,
         scale: 3,
-      ),
-      ScreenSizeScale(
-        screenWidth: 0,
-        scale: 2,
-      ),
+      )
     ];
   }
 
   int _getCrossAxisCount(double width) {
-    if (width > 1000) {
-      return 5;
-    }
+    for (ScreenSizeScale screenSizeScale in _getSizesScales()) {
+      final double screenWidth = screenSizeScale.screenWidth;
+      final int scale = screenSizeScale.scale;
 
-    if (width > 700) {
-      return 4;
-    }
-
-    if (width > 450) {
-      return 3;
+      if (width > screenWidth) {
+        return scale;
+      }
     }
 
     return 2;

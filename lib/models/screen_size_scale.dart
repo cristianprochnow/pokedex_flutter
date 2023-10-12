@@ -1,6 +1,6 @@
 class ScreenSizeScale {
   double screenWidth;
-  double scale;
+  int scale;
 
   ScreenSizeScale({
     required this.screenWidth,
