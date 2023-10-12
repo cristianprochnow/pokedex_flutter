@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pokedex_flutter/models/pokemon.dart';
+import 'package:pokedex_flutter/utils/string_extension.dart';
 
 class PokemonCardData extends StatelessWidget {
   final Pokemon pokemon;
@@ -17,12 +18,16 @@ class PokemonCardData extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(16),
-            child: Image.network(pokemon.image),
+            child: Image.network(
+              pokemon.image,
+              fit: BoxFit.contain,
+              alignment: Alignment.bottomRight,
+            ),
           ),
         ),
         const Divider(),
         Text(
-          pokemon.name.toString(),
+          pokemon.name.toString().capitalize(),
           style: const TextStyle(
             fontSize: 21,
             color: Colors.black87,
