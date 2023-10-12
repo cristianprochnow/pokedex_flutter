@@ -30,7 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
           List<Pokemon> content = snapshot.data ?? [];
 
           if (isConnectionDone) {
-            widget = PokemonGrid(pokemonList: content);
+            widget = PokemonGrid(
+              pokemonList: content,
+            );
           }
 
           return widget;
