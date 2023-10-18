@@ -46,6 +46,10 @@ class PokemonCard extends StatelessWidget {
   }
 
   void onPressedCard(BuildContext context) {
-    Navigator.pushNamed(context, '/details');
+    Navigator.pushNamed(
+      context,
+      '/details',
+      arguments: pokemon
+    );
   }
 }
