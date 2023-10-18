@@ -9,10 +9,27 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final pokemon = ModalRoute.of(context)!.settings.arguments as Pokemon;
 
-    return Image.network(
-      pokemon.image,
-      fit: BoxFit.contain,
-      alignment: Alignment.bottomRight,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(
+          top: MediaQuery.of(context).padding.top,
+        ),
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            DetailImage(
+              pokemon: pokemon,
+            ),
+            DetailTitle(
+              pokemon: pokemon,
+            ),
+            DetailData(
+              pokemon: pokemon
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
