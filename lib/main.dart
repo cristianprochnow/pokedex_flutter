@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pokedex_flutter/screens/home.dart';
+import 'package:pokedex_flutter/screens/details.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,7 +18,8 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       routes: {
-        '/': (context) => const HomeScreen()
+        '/': (context) => const HomeScreen(),
+        '/details': (context) => const DetailsScreen()
       },
       initialRoute: '/',
     );

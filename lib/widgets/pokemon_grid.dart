@@ -53,6 +53,7 @@ class _PokemonGridState extends State<PokemonGrid> {
       padding: const EdgeInsets.all(16),
       crossAxisCount: _getCrossAxisCount(screenWidth),
       crossAxisSpacing: 4,
+      mainAxisSpacing: 4,
       semanticChildCount: pokemonList.length,
       childAspectRatio: 200 / 244,
       physics: const BouncingScrollPhysics(),
