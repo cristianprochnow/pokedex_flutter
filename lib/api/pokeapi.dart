@@ -1,10 +1,17 @@
 import 'package:pokedex_flutter/models/pokemon.dart';
+import 'package:pokedex_flutter/models/pokemon_data.dart';
 import 'package:pokedex_flutter/services/api.dart';
 import 'package:pokedex_flutter/utils/constants.dart';
 
 class PokeApi {
   static Pokemon getPokemon(Map<String, dynamic> pokemonData) {
     return Pokemon.fromJson(pokemonData);
+  }
+
+  static Future<PokemonData> getPokemonDetails(String pokemonUrl) async {
+    final jsonData = await Api.getData(pokemonUrl);
+
+    return PokemonData.fromJson(jsonData);
   }
 
   static Future<List<Pokemon>> getPokemonList({
