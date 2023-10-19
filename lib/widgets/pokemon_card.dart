@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_flutter/api/pokeapi.dart';
 
 import 'package:pokedex_flutter/models/pokemon.dart';
 import 'package:pokedex_flutter/widgets/pokemon_card_background.dart';
@@ -20,6 +21,12 @@ class PokemonCard extends StatelessWidget {
       width: 1,
     ),
   );
+
+  Future<void> getPokemonData() async {
+    pokemon.details = await PokeApi.getPokemonDetails(
+      pokemon.url,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +53,10 @@ class PokemonCard extends StatelessWidget {
   }
 
   void onPressedCard(BuildContext context) {
-    Navigator.pushNamed(
+    getPokemonData().then((value) => Navigator.pushNamed(
       context,
       '/details',
       arguments: pokemon
-    );
+    ));
   }
 }

@@ -29,9 +29,23 @@ class DetailData extends StatelessWidget {
           Radius.circular(72),
         ),
       ),
-      child: const Column(
+      child: Column(
         children: [
-
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Peso: ${pokemon.details!.weightInKilograms} kg",
+            style: const TextStyle(
+              fontSize: 24,
+            ),
+          ),
+          Text(
+            "Altura: ${pokemon.details!.heightInMeters} m",
+            style: const TextStyle(
+              fontSize: 24,
+            ),
+          ),
         ],
       ),
     );

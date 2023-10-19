@@ -1,8 +1,10 @@
 import 'package:pokedex_flutter/utils/constants.dart';
+import 'package:pokedex_flutter/models/pokemon_data.dart';
 
 class Pokemon {
   String url;
   String name;
+  PokemonData? details;
 
   Pokemon({
     required this.url,

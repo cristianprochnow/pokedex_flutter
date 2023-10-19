@@ -27,6 +27,7 @@ class PokeApi {
 
     for (Map<String, dynamic> item in jsonData['results']) {
       final Pokemon pokemon = getPokemon(item);
+
       pokemonList.add(pokemon);
     }
 

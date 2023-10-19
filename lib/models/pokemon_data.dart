@@ -1,7 +1,7 @@
 class PokemonData {
   final int id;
-  final double height; // em dm
-  final double weight; // em hg
+  final int height; // em dm
+  final int weight; // em hg
 
   PokemonData({
     required this.id,
